@@ -14,10 +14,10 @@ It's designed to run in a fully locked-down configuration, with
   [Podman](https://podman.io/))
 
 
-## Environment variables
+## Let's Encrypt Subscriber Agreement
 
-- `ACME_AGREE`: Must be set to `"true"` to indicate that you agree to the Let's Encrypt Subscriber
-  Agreement.
+The default configuration does not accept the agreement. To do so, set the container `CMD` to
+`-agree` to pass the argument to caddy.
 
 
 ## Ports

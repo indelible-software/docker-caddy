@@ -25,9 +25,10 @@ COPY ./Caddyfile /etc/
 # Configure entrypoint
 ENV CADDYPATH /etc/ssl/caddy
 WORKDIR /srv
-ENTRYPOINT ["/usr/local/bin/caddy"]
-CMD ["-conf", "/etc/Caddyfile", \
-     "-http-port", "8080", \
-     "-https-port", "8443", \
-     "-log", "stdout", \
-     "-agree", "$ACME_AGREE"]
+ENTRYPOINT [\
+    "/usr/local/bin/caddy", \
+    "-conf", "/etc/Caddyfile", \
+    "-log", "stdout", \
+    "-http-port", "8080", \
+    "-https-port", "8443"]
+
