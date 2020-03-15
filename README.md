@@ -5,6 +5,14 @@ written in Go.
 
 This runs a "Personal" licensed version of Caddy by using their binary download service.
 
+It's designed to run in a fully locked-down configuration, with
+
+- `read-only` enabled (requires all volumes listed below to have mounts or `tmpfs` attached);
+- `cap-drop` set to `all`;
+- `user` set to run as a non-root user in the container (this will only work with volume mounts
+  when using a pod manager which supports rootless execution, such as
+  [Podman](https://podman.io/))
+
 
 ## Environment variables
 
