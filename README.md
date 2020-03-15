@@ -1,4 +1,4 @@
-# `caddy`
+# caddy
 
 Docker image for [Caddy](https://caddyserver.com/), an open-source webserver with automatic HTTPS
 written in Go.
