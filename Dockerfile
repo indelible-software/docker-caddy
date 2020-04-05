@@ -1,9 +1,6 @@
 FROM alpine:latest
 LABEL maintainer="Paul Hendry <paul@ijj.li>"
 
-# Configuration variables
-ENV ACME_AGREE "false"
-
 # Expose ports/volumes
 EXPOSE 8080
 EXPOSE 8443
