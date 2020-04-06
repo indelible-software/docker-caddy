@@ -6,8 +6,10 @@ EXPOSE 8080
 EXPOSE 8443
 VOLUME ["/etc/ssl/caddy", "/srv", "/var/log/caddy"]
 
-# Install dependencies
-RUN apk add --no-cache ca-certificates git mailcap shadow tzdata
+# Install dependencies and configure system
+RUN apk add --no-cache ca-certificates git mailcap shadow tzdata && \
+    echo "* soft nofile 16384" >> /etc/security/limits.conf && \
+    echo "* hard nofile 16384" >> /etc/security/limits.conf && \
 
 # Download and install Caddy
 ADD https://caddyserver.com/download/linux/amd64?plugins=http.cache,http.cors,http.git,http.realip&license=personal&telemetry=off /tmp/caddy.tar.gz
